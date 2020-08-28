@@ -13,10 +13,12 @@ import Home from "./Home";
 import Procedures from "./Procedures";
 import Contact from "./Contact";
 import WidgetShow from './WidgetShow';
+import Ortho from "./Ortho"
 
 function App() 
 {
   const procedures = ["Deep Cleaning", "Oral Surgery", "Root Canal", "Crown", "Implants", "Fillings"];
+  const braces = ["Traditional", "Clear", "Invisalign", "Internal Braces", "Retainer"];
   
   return (
     <Router>
@@ -28,6 +30,10 @@ function App()
         </nav>
         <Route exact path="/" component={Home} />
         <Route path="/procedures" render={() => <Procedures procedures={procedures} />} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/widgets/:id" render={(props) => <WidgetShow procedures={procedures} {...props} />} />
+
+        <Route path="/ortho" render={() => <Ortho braces={braces} />} />
         <Route path="/contact" component={Contact} />
         <Route path="/widgets/:id" render={(props) => <WidgetShow procedures={procedures} {...props} />} />
       </div>
