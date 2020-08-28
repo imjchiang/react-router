@@ -13,7 +13,8 @@ import Home from "./Home";
 import Procedures from "./Procedures";
 import Contact from "./Contact";
 import WidgetShow from './WidgetShow';
-import Ortho from "./Ortho"
+import Ortho from "./Ortho";
+import Gallery from "./Gallery";
 
 function App() 
 {
@@ -34,7 +35,7 @@ function App()
         <Route path="/widgets/:id" render={(props) => <WidgetShow procedures={procedures} {...props} />} />
 
         <Route path="/ortho" render={() => <Ortho braces={braces} />} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/gallery" component={Gallery} />
         <Route path="/widgets/:id" render={(props) => <WidgetShow procedures={procedures} {...props} />} />
       </div>
     </Router>
