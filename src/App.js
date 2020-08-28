@@ -15,6 +15,7 @@ import Contact from "./Contact";
 import WidgetShow from './WidgetShow';
 import Ortho from "./Ortho";
 import Gallery from "./Gallery";
+import Recommend from "./Recommend";
 
 function App() 
 {
@@ -36,7 +37,7 @@ function App()
 
         <Route path="/ortho" render={() => <Ortho braces={braces} />} />
         <Route path="/gallery" component={Gallery} />
-        <Route path="/widgets/:id" render={(props) => <WidgetShow procedures={procedures} {...props} />} />
+        <Route path="/recommendation/:id" render={(props) => <Recommend braces={braces} {...props} />} />
       </div>
     </Router>
   );
