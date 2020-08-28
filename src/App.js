@@ -13,7 +13,10 @@ import Home from "./Home";
 import Procedures from "./Procedures";
 import Contact from "./Contact";
 
-function App() {
+function App() 
+{
+  const procedures = ["Deep Cleaning", "Oral Surgery", "Root Canal", "Crown", "Implants", "Fillings"];
+  
   return (
     <Router>
       <div className="App">
@@ -23,7 +26,7 @@ function App() {
           <Link to="/contact">Contact Us!</Link>{" "}
         </nav>
         <Route exact path="/" component={Home} />
-        <Route path="/procedures" component={Procedures} />
+        <Route path="/procedures" render={() => <Procedures procedures={procedures} />} />
         <Route path="/contact" component={Contact} />
       </div>
     </Router>
